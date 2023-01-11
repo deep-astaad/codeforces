@@ -13,12 +13,34 @@ using namespace std;
 #define cno cout<<"NO"<<"\n"
 #define sp " "
 #define nn "\n"
+#define nl cout<<nn
 
 const unsigned int M = 1000000007;
 
 void solve()
 {
-		
+	ll n; cin>>n;
+	if(n&1){
+		for (int i = 0; i < n; ++i)
+		{
+			cout<<n<<sp;
+		}
+	}
+	else{
+		if(n>2){
+			cout<<2<<sp<<4<<sp;
+			ll x = ((2^4)*n - 6 - (n-4))/2;
+			for (int i = 0; i < n-4; ++i)
+			{
+				cout<<1<<sp;
+			}
+			cout<<x<<sp<<x;
+		}
+		else{
+			cout<<2<<sp<<6;
+		}
+	}
+	nl;
 }
 
 int main()

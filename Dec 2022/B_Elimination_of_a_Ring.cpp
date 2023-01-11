@@ -18,7 +18,21 @@ const unsigned int M = 1000000007;
 
 void solve()
 {
-		
+	ll n; cin>>n;
+	vll v(n);
+	unordered_map<ll,ll> mp;
+	for (int i = 0; i < n; ++i)
+	{
+		cin>>v[i];
+		mp[v[i]]++;
+	}
+	if (mp.size()>2)
+	{
+		cout<<n<<nn;
+	}
+	else{
+		cout<<n/2 + 1<<nn;
+	}
 }
 
 int main()

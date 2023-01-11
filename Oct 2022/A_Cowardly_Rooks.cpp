@@ -18,7 +18,20 @@ const unsigned int M = 1000000007;
 
 void solve()
 {
+		ll n,m;
+		cin>>n>>m;
+		ll t=m;
+		while(t--){
+			ll x,y;
+			cin>>x>>y;	
+		}
 		
+		if(n-m > 0){
+			cyes;
+		}
+		else{
+			cno;
+		}
 }
 
 int main()
