@@ -18,7 +18,34 @@ const unsigned int M = 1000000007;
 
 void solve()
 {
-		
+	ll n;
+	cin>>n;
+	vll v(n);
+	for (int i = 0; i < n; ++i)
+	{
+		cin>>v[i];
+	}
+	ll i=0,j=n-1,cnt=0;
+	while(i<j){
+
+		if(v[i]==0){
+			i++;
+			continue;
+		}
+
+		if(v[j]==1){
+			j--;
+			continue;
+		}
+
+		if(v[i]==1 && v[j]==0){
+			cnt++;
+			i++;
+			j--;
+		}
+	}
+
+	cout<<cnt<<nn;
 }
 
 int main()

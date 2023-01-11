@@ -18,7 +18,15 @@ const unsigned int M = 1000000007;
 
 void solve()
 {
-		
+	ll n,a,b;
+	cin>>n>>a>>b;
+	if ((a==b && b==n) || (a+b<=n-2))
+	{
+		cyes;
+	}
+	else{
+		cno;
+	}
 }
 
 int main()

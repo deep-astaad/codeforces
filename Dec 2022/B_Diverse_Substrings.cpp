@@ -1,4 +1,4 @@
-// Author : deep_aman (astaad)
+// Coded by : Aman Deep (deep_aman/astaad)
 #include <bits/stdc++.h>
 using namespace std;
 #define ll long long int
@@ -13,12 +13,27 @@ using namespace std;
 #define cno cout<<"NO"<<"\n"
 #define sp " "
 #define nn "\n"
+#define nl cout<<nn;
 
 const unsigned int M = 1000000007;
 
 void solve()
 {
-		
+	ll n; cin>>n;
+	string s; cin>>s;
+	ll ans=0;
+	for (int i = 0; i < n; ++i)
+	{
+		unordered_map<char,ll> mp;
+		ll mx=LLONG_MIN;
+		for (int j = i; j < min(n,i+101LL); ++j)
+		{
+			mp[s[j]]++;
+			mx=max(mx,mp[s[j]]);
+			if(mp.size()>=mx) ans++;
+		}
+	}
+	cout<<ans<<nn;
 }
 
 int main()

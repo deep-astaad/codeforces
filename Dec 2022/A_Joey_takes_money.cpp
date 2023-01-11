@@ -1,4 +1,4 @@
-// Author : deep_aman (astaad)
+// Coded by : Aman Deep (deep_aman/astaad)
 #include <bits/stdc++.h>
 using namespace std;
 #define ll long long int
@@ -13,12 +13,21 @@ using namespace std;
 #define cno cout<<"NO"<<"\n"
 #define sp " "
 #define nn "\n"
+#define nl cout<<nn;
 
 const unsigned int M = 1000000007;
 
 void solve()
 {
-		
+	ll n; cin>>n;
+	vll v(n);
+	ll ans=1;
+	for (int i = 0; i < n; ++i)
+	{
+		cin>>v[i];
+		ans*=v[i];
+	}
+	cout<<2022LL*(ans+n-1)<<nn;
 }
 
 int main()

@@ -18,7 +18,24 @@ const unsigned int M = 1000000007;
 
 void solve()
 {
-		
+	ll n; cin>>n;
+	vll a(n);
+	for (int i = 0; i < n; ++i)
+	{
+		cin>>a[i];
+	}
+	for (int i = n-1; i >= 0; --i)
+	{
+		if(i+a[i]<n){
+			a[i]+=a[i+a[i]];
+		}
+	}
+	ll ans=0;
+	for (int i = 0; i < n; ++i)
+	{
+		ans=max(ans,a[i]);
+	}
+	cout<<ans<<nn;
 }
 
 int main()

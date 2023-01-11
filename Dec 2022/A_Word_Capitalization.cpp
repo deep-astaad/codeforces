@@ -1,4 +1,4 @@
-// Author : deep_aman (astaad)
+// Coded by : Aman Deep (deep_aman/astaad)
 #include <bits/stdc++.h>
 using namespace std;
 #define ll long long int
@@ -13,19 +13,23 @@ using namespace std;
 #define cno cout<<"NO"<<"\n"
 #define sp " "
 #define nn "\n"
+#define nl cout<<nn;
 
 const unsigned int M = 1000000007;
 
 void solve()
 {
-		
+	string s; cin>>s;
+
+	if(s[0]>=97) s[0]-=32;
+	cout<<s;
 }
 
 int main()
 {
     ll testcase;
     testcase = 1;
-    cin >> testcase;
+    // cin >> testcase;
     while (testcase--)
     {
 		solve();

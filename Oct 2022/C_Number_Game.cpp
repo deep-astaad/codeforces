@@ -18,7 +18,27 @@ const unsigned int M = 1000000007;
 
 void solve()
 {
-		
+	ll n; cin>>n;
+	vll v(n);
+	for (int i = 0; i < n; ++i)
+	{
+		cin>>v[i];
+	}
+	sort(all(v));
+	ll ans=0;
+	for (int i = 0; i < n; ++i)
+	{
+		ll temp=v[i]+i;
+		if(temp-ans==1){
+			ans=temp;
+			
+		}
+		else{
+			break;
+		}
+	}
+	cout<<ans<<nn;
+
 }
 
 int main()

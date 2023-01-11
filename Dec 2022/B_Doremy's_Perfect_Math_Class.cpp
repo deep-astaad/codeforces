@@ -16,9 +16,21 @@ using namespace std;
 
 const unsigned int M = 1000000007;
 
+
 void solve()
 {
+	ll n; cin>>n;
+	vll v(n);
+	ll mx=LLONG_MIN;
+	ll gcd=0;
+	for (int i = 0; i < n; ++i)
+	{
+		cin>>v[i];
+		mx = max(mx,v[i]);
+		gcd = __gcd(gcd,v[i]);
 		
+	}
+	cout<<mx/gcd<<nn;
 }
 
 int main()

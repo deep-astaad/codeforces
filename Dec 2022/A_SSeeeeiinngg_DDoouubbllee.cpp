@@ -18,7 +18,13 @@ const unsigned int M = 1000000007;
 
 void solve()
 {
-		
+	string s; cin>>s;
+	string ans=s;
+	// cout<<ans<<nn;
+	reverse(s.begin(),s.end());
+	// cout<<s<<nn;
+	// ans=ans+s;
+	cout<<ans<<s<<nn;
 }
 
 int main()
