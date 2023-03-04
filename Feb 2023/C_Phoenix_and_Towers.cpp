@@ -26,53 +26,36 @@ const ll mod = 1e9 + 7;
 //													 	   ~ Mark Zuckerberg
 void solve()
 {
-	int n; cin >> n;
-	vll a(n), b(n);
-	vll idx1(n + 1), idx2(n + 1);
-	int i1 = -1, i2 = -1;
+	int n, m, x; cin >> n >> m >> x;
+	vll h(n);
 	for (int i = 0; i < n; ++i)
 	{
-		cin >> a[i];
-		idx1[a[i]] = i;
+		cin >> h[i];
 	}
+	vll ans(n);
+	vpll vp;
 	for (int i = 0; i < n; ++i)
 	{
-		cin >> b[i];
-		idx2[b[i]] = i;
+		vp.pb({h[i], i});
 	}
-	i1 = min(idx1[1], idx2[1]);
-	i2 = max(idx1[1], idx2[1]);
-	ll ans = i1 * (i1 + 1) / 2;
-	ans += (n - 1 - i2) * (n - i2) / 2;
-	ans += (i2 - i1 - 1) * (i2 - i1) / 2;
-	for (int i = 2; i < n; ++i)
+	sort(all(vp));
+	for (int i = 0; i < n; ++i)
 	{
-		// cout << ans << nn;
-		ll l = min(idx1[i], idx2[i]);
-		ll r = max(idx1[i], idx2[i]);
-		if (r <= i1) {
-			ans += (n - i2) * (i1 - r);
-		}
-		else if (l >= i2) {
-			ans += (i1 + 1) * (l - i2);
-		}
-		else if (l < i1 && r > i2) {
-			// ans += (r - l - 1 - (2 * (i - 1))) * (r - l - (2 * (i - 1))) / 2;
-			ans += (r - i2) * (i1 - l);
-		}
-		i1 = min(l, i1);
-		i2 = max(r, i2);
-
+		ans[vp[i].ss] = (i % m) + 1;
 	}
-	cout << ans + 1 << nn;
-
+	cyes;
+	for (int i = 0; i < n; ++i)
+	{
+		cout << ans[i] << sp;
+	}
+	nl;
 }
 
 int32_t main()
 {
 	deep_aman;
 	ll testcase = 1;
-	// cin >> testcase;
+	cin >> testcase;
 	while (testcase--) solve();
 	return 0;
 }
