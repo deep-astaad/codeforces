@@ -1,4 +1,4 @@
-/* Code by : Aman Deep (deep_aman) */
+/* Aman Deep (deep_aman) */
 #include <bits/stdc++.h>
 using namespace std;
 #define deep_aman ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL);
@@ -6,29 +6,44 @@ using namespace std;
 #define ll long long
 #define vll vector <long long>
 #define all(x) (x).begin(), (x).end()
-#define pll pair <long long, long long>
-#define vvll vector <vector <long long>>
-#define vpll vector <pair <long long, long long>>
+#define vvll vector<vector<long long>>
+#define pll pair<long long, long long>
+#define vpll vector<pair<long long, long long>>
 #define pb push_back
 #define ff first
 #define ss second
-#define sp ' '
-#define endl '\n'
 #define nl cout << '\n'
+#define nn '\n'
+#define sp ' '
 #define cyes cout << "Yes\n"
 #define cno cout << "No\n"
-#define nn '\n'
-const ll mod = 1e9 + 7;
+#define endl '\n'
+const int mod = 1e9 + 7;
 //     The greatest success comes from the freedom to fail
 //                                                        ~ Mark Zuckerberg
 /*
-test
+
 */
 
-#define TESTCASE
+// #define TESTCASE
 void solve()
 {
-	/* Write code here */
+	int n; cin>>n;
+	vector<int> pre(1e5+1);
+	for (int i = 0; i < n; ++i){
+		int x; cin>>x;
+		pre[x]+=x;
+	}
+
+	vector<int> dp(1e5+2);
+	dp[1]=pre[1];
+	for (int i = 2; i <= 1e5+1; ++i)
+	{
+		dp[i]=max(dp[i-1],dp[i-2]+pre[i]);
+	}
+
+	cout<<dp[1e5+1]<<nn;
+
 
 }
 

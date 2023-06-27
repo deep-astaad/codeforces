@@ -1,4 +1,4 @@
-/* Code by : Aman Deep (deep_aman) */
+/* Aman Deep (deep_aman) */
 #include <bits/stdc++.h>
 using namespace std;
 #define deep_aman ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL);
@@ -6,30 +6,46 @@ using namespace std;
 #define ll long long
 #define vll vector <long long>
 #define all(x) (x).begin(), (x).end()
-#define pll pair <long long, long long>
-#define vvll vector <vector <long long>>
-#define vpll vector <pair <long long, long long>>
+#define vvll vector<vector<long long>>
+#define pll pair<long long, long long>
+#define vpll vector<pair<long long, long long>>
 #define pb push_back
 #define ff first
 #define ss second
-#define sp ' '
-#define endl '\n'
 #define nl cout << '\n'
+#define nn '\n'
+#define sp ' '
 #define cyes cout << "Yes\n"
 #define cno cout << "No\n"
-#define nn '\n'
-const ll mod = 1e9 + 7;
+#define endl '\n'
+const int mod = 1e9 + 7;
 //     The greatest success comes from the freedom to fail
 //                                                        ~ Mark Zuckerberg
 /*
-test
+
 */
 
 #define TESTCASE
 void solve()
 {
-	/* Write code here */
+	int n,k; cin>>n>>k;
+	vvll v(n, vll(k));
+	for (int i = 0; i < n; ++i) {
+		for (int j = 0; j < k; ++j) {
+			char c; cin>>c;
+			if(c=='+') v[i][j]=1;
+		}
+	}
+    set<int> st;
+    for (int j = 0; j < k; ++j)
+    {
+    	for (int i = 1; i < n; ++i)
+    	{
+    		if(v[i][j]!=v[0][j]) st.insert(i);
+    	}
+    }
 
+    cout<<n-st.size()<<nn;
 }
 
 int32_t main()
